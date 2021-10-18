@@ -1,10 +1,13 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
-
+  const login = <FontAwesomeIcon icon={faUser} />
+  const lock = <FontAwesomeIcon icon={faLock} />
  
    
     return (
@@ -24,13 +27,13 @@ const Header = () => {
       <Nav.Link as={HashLink} to="/home#services">SERVICES</Nav.Link>
       <Nav.Link as={HashLink} to="/doctors">DOCTORS</Nav.Link>
       <Nav.Link as={HashLink} to="/shops">SHOP</Nav.Link>     
-      <Nav.Link as={HashLink} to="/login#login">LOGIN</Nav.Link>
-      <Nav.Link as={HashLink} to="/register#register">REGISTER</Nav.Link>
+      <Nav.Link as={HashLink} to="/login#login"> {login} | LOGIN </Nav.Link>
+      <Nav.Link as={HashLink} to="/register#register"> {lock} | REGISTER</Nav.Link>
       
     </Nav>
     <Nav>
     <Navbar.Text>
-                            Signed in as: <a href="#login">{}
+                            Signed in as: {login} <a href="#login">{}
                             <br />
                             {}</a>
                         </Navbar.Text>

@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitterSquare, faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+
 const Footer = () => {
+    const fb = <FontAwesomeIcon icon={faFacebook} />
+    const twitter = <FontAwesomeIcon icon={faTwitterSquare} />
+    const linkedIn = <FontAwesomeIcon icon={faLinkedin} />
+    const git = <FontAwesomeIcon icon={faGithub} />
+
     return (
         <div className='bg-dark'>
               <div className="my-5">
@@ -53,9 +61,20 @@ const Footer = () => {
     <br />
     <hr />
 
-    <div className='text-white'>
-        copyright,2021
+    <div className='text-white container d-flex justify-content-around'>
+            <h5>©copyright 2021, Linings HealthCare</h5> 
+            <div style={{fontSize:20}}>
+                <span>FOLLOW US | </span>
+            <Link to=""> {fb} </Link>
+            <Link to=""> {twitter} </Link>
+            <Link to=""> {linkedIn} </Link>
+            <Link to=""> {git}</Link> |
+            </div>
+
     </div>
+    <br />
+    <br />
+   
         </div>
     );
 };
