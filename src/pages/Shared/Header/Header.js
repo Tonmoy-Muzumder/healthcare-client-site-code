@@ -1,31 +1,39 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-// import { HashLink } from 'react-router-hash-link';
+// import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 const Header = () => {
+
+ 
+   
     return (
         <>
-            <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+           <Navbar  sticky="top"  collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Container>
   <Navbar.Brand href="#home">
-    <div>
-      <h1>LININGS</h1>
-      <p style={{color: 'green', marginLeft: 25}}>HEALTH<span style={{color: 'red'}}>CARE</span> </p>
-    </div>
+  <div>
+  <h1 className='m-0'>LININGS</h1>
+  <p style={{color: 'green', marginLeft: 25}}>HEALTH<span style={{color: 'red'}}>CARE</span> </p>
+</div>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
-      <Nav.Link href="/home#home">HOME</Nav.Link>
-      <Nav.Link href="/services#services">SERVICES</Nav.Link>
-      <Nav.Link href="/services#services">SERVICES</Nav.Link>
-      <Nav.Link href="/services#services">SERVICES</Nav.Link>
+      <Nav.Link as={HashLink} to="/home#home">HOME</Nav.Link>
+      <Nav.Link as={HashLink} to="#services">SERVICES</Nav.Link>
+      <Nav.Link href="/shop">SHOP</Nav.Link>
+      <Nav.Link href="/doctors">DOCTORS</Nav.Link>
+      <Nav.Link as={HashLink} to="/login#login">LOGIN</Nav.Link>
+      <Nav.Link as={HashLink} to="/register#register">REGISTER</Nav.Link>
+      
     </Nav>
-    
     <Nav>
-      <Nav.Link   href="#login">LOGIN</Nav.Link>
-      <Nav.Link  eventKey={2}   href="#register">
-      REGISTER
-      </Nav.Link>
+    <Navbar.Text>
+                            Signed in as: <a href="#login">{}
+                            <br />
+                            {}</a>
+                        </Navbar.Text>
     </Nav>
   </Navbar.Collapse>
   </Container>

@@ -1,9 +1,44 @@
 import './App.css';
-import Home from './pages/Home/Home/Home'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Header from './pages/Shared/Header/Header'
+import Footer from './pages/Shared/Footer/Footer'
+import Home from './pages/Home/Home/Home';
+import Services from './pages/Home/Services/Services';
+
+import Details from './pages/Details/Details/Details';
+import Login from './pages/Login/Login/Login'
+import Register from './pages/Login/Register/Register';
+
 function App() {
   return (
     <div className="App">
-    <Home></Home>
+     <Router>
+       <Header></Header>
+        <Switch>
+          <Route exact path="/">
+             <Home></Home>
+          </Route>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route path="/services">
+            <Services></Services>
+          </Route>
+          <Route path="/details/:serviceId">
+          <Details></Details>
+          </Route>
+
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+
+
+        </Switch>
+        <Footer></Footer>
+     </Router>
     </div>
   );
 }
