@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import Service from '../../Home/Service/Service';
 
 
@@ -8,13 +7,21 @@ const Services = () => {
     useEffect(() => {
         fetch('services.json')
             .then(res => res.json())
-            .then(data => setServices(data));
+            .then(data => setServices(data))
+            .catch(
+                (error) => {
+                  console.log(error);
+                }
+              )
     }, []);
 
     return (
         
         <div id="services">
-            <h2 className="my-5 text-start container">Medical Services</h2>
+            <div className="my-3 text-start container">
+            <h2>Medical Services</h2>
+            <p>The Best Services In our Hospital</p>
+            </div>
             <div className='container'>
             <div className="row">
                 {
