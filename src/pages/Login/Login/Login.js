@@ -23,15 +23,18 @@ const Login = () => {
     <Form.Control type="password" placeholder="Password" />
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Link>
-    Not Register Yet?
-    </Link>
   </Form.Group>
   <Button variant="primary" type="submit">
     Submit
   </Button>
 </Form>
             </Container>
+            <br />
+ <br />
+ <br />
+            <Link to="/register">
+    Not Register Yet?
+    </Link>
 
 <br />
 

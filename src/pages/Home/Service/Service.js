@@ -1,11 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import {} from 'react-router-dom';
 
 const Service = ({ service }) => {
-    // const {service} = props;
     const { id,  name, description, img } = service;
     return (
         <div className="col-lg-4 col-sm-6 col-12  g-3">
