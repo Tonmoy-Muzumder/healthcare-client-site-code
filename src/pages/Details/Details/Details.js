@@ -26,7 +26,7 @@ const Details = () => {
     },[]);
 
     useEffect(()=>{
-                    const itemDetail = detail.find(d => d.id = serviceId);
+                    const itemDetail = detail.find(d => d.id == serviceId);
                     setSingleItem(itemDetail);
     },[detail]);
 
