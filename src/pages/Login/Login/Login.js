@@ -2,12 +2,11 @@ import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-// import useFirebase from '../../../hooks/useFirebase';
-
 
 
 const Login = () => {
     const { signInUsingGoogle } = useAuth();
+
     return (
         <div>
             <h1>Please Login</h1>
@@ -50,6 +49,7 @@ const Login = () => {
            <button onClick={signInUsingGoogle} className="btn btn-warning">Sign In With Google</button>
         </div>
     );
+    
 };
 
 export default Login;

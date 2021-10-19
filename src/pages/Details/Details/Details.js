@@ -5,19 +5,15 @@ import { useParams } from 'react-router-dom';
 
 
 const Details = () => {
-
-    const {serviceId} = useParams();
+    const { serviceId } = useParams();
     const [detail, setDetail] = useState([]);
     const [singleItem, setSingleItem] = useState([]);
-
-    
 
     useEffect(()=>{
         const url ='/services.json';
         fetch(url)
         .then(res => res.json())
-        .then(data => setDetail(data))
-        
+        .then(data => setDetail(data))  
         .catch(
             (error) => {
               console.log(error);

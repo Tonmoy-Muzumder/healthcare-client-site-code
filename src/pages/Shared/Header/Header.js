@@ -30,22 +30,23 @@ const Header = () => {
       <Nav.Link as={HashLink} to="/home#services">SERVICES</Nav.Link>
       <Nav.Link as={HashLink} to="/doctors">DOCTORS</Nav.Link>
       <Nav.Link as={HashLink} to="/shops">SHOP</Nav.Link>     
-      <Nav.Link as={HashLink} to="/login#login"> {login} | LOGIN </Nav.Link>
-      <Nav.Link as={HashLink} to="/register#register"> {lock} | REGISTER</Nav.Link>
+      
      
       
     </Nav>
     <Nav>
     <Navbar.Text>
-    {!user.name && <div>
-
-      Signed in as: {login} <h2>{user.name}</h2>
+    {user?.email ?
+        <Button className="mx-1" onClick={logOut} variant="primary">Logout</Button> :
+        <Nav.Link> <div className="d-flex"><Nav.Link as={HashLink} to="/login"> {login} | LOGIN </Nav.Link>
+        <Nav.Link as={HashLink} to="/register"> {lock} | REGISTER</Nav.Link></div> </Nav.Link>}
+    {!user.name && <div className="d-flex">
+         <h2 className="mx-0">{user.name}</h2>
           <p>{user.email}</p>
+        
       </div>
     }
-        {user?.email ?
-        <Button onClick={logOut} variant="light">Logout</Button> :
-        <Nav.Link></Nav.Link>}
+        
 
          
           
