@@ -20,21 +20,27 @@ function App() {
      <Router>
        <Header></Header>
         <Switch>
+
           <Route exact path="/">
              <Home></Home>
           </Route>
+
           <Route path="/home">
             <Home></Home>
           </Route>
+
           <Route path="/services">
             <Services></Services>
           </Route>
+
           <PrivateRoute path="/details/:serviceId">
           <Details></Details>
           </PrivateRoute>
+
           <PrivateRoute path ="/doctors">
             <Doctors></Doctors>
           </PrivateRoute>
+
           <PrivateRoute path="/shops">
             <Shops></Shops>
           </PrivateRoute>
@@ -42,13 +48,15 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+
           <Route path="/register">
             <Register></Register>
           </Route>
 
-        <Route path="*">
+          <Route path="*">
           <NotFound></NotFound>
         </Route>
+        
         </Switch>
         <Footer></Footer>
      </Router>
