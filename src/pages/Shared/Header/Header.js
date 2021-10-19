@@ -1,11 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faLock, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 // import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
+  const { user, logOut } = useAuth();
+
   const login = <FontAwesomeIcon icon={faUser} />
   const lock = <FontAwesomeIcon icon={faLock} />
  
@@ -29,14 +32,27 @@ const Header = () => {
       <Nav.Link as={HashLink} to="/shops">SHOP</Nav.Link>     
       <Nav.Link as={HashLink} to="/login#login"> {login} | LOGIN </Nav.Link>
       <Nav.Link as={HashLink} to="/register#register"> {lock} | REGISTER</Nav.Link>
+     
       
     </Nav>
     <Nav>
     <Navbar.Text>
-        Signed in as: {login} <a href="#login">{}
-        <br />{}</a>  
+    {!user.name && <div>
+
+      Signed in as: {login} <h2>{user.name}</h2>
+          <p>{user.email}</p>
+      </div>
+    }
+        {user?.email ?
+        <Button onClick={logOut} variant="light">Logout</Button> :
+        <Nav.Link></Nav.Link>}
+
+         
+          
     </Navbar.Text>
     </Nav>
+    
+
   </Navbar.Collapse>
   </Container>
 </Navbar>

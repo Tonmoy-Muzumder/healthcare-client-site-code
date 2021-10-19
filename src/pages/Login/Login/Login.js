@@ -1,16 +1,20 @@
-
 import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
+// import useFirebase from '../../../hooks/useFirebase';
+
+
 
 const Login = () => {
+    const { signInUsingGoogle } = useAuth();
     return (
         <div>
             <h1>Please Login</h1>
 
             <Container>
             <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBasicEmail" required>
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" />
              <Form.Text className="text-muted">
@@ -18,7 +22,7 @@ const Login = () => {
       </Form.Text>
       </Form.Group>
 
-         <Form.Group className="mb-3" controlId="formBasicPassword">
+         <Form.Group className="mb-3" controlId="formBasicPassword" required>
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" placeholder="Password" />
          </Form.Group>
@@ -29,21 +33,21 @@ const Login = () => {
     </Button>
               </Form>
    </Container>
-            <br />
+ <br />
  <br />
  <br />
             <Link to="/register">
-    Not Register Yet?
-    </Link>
+                 Not Register Yet?
+            </Link>
 
 <br />
 
 
-  <p>Or</p>
+                 <p>Or</p>
   <hr />
   
 
-            <button className="btn btn-warning">Google Sign In</button>
+           <button onClick={signInUsingGoogle} className="btn btn-warning">Sign In With Google</button>
         </div>
     );
 };

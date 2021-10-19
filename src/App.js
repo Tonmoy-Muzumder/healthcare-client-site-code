@@ -9,11 +9,14 @@ import Shops from './pages/Shop/Shops/Shops'
 import Details from './pages/Details/Details/Details';
 import Login from './pages/Login/Login/Login'
 import Register from './pages/Login/Register/Register';
+import PrivateRoute from './pages/Login/Login/PrivateRoute/PrivateRoute'
+import AuthProvider from './contexts/AuthProvider';
 import NotFound from './pages/NotFound/NotFound';
 
 function App() {
   return (
     <div className="App">
+     <AuthProvider>
      <Router>
        <Header></Header>
         <Switch>
@@ -26,15 +29,15 @@ function App() {
           <Route path="/services">
             <Services></Services>
           </Route>
-          <Route path="/details/:serviceId">
+          <PrivateRoute path="/details/:serviceId">
           <Details></Details>
-          </Route>
-          <Route path ="/doctors">
+          </PrivateRoute>
+          <PrivateRoute path ="/doctors">
             <Doctors></Doctors>
-          </Route>
-          <Route path="/shops">
+          </PrivateRoute>
+          <PrivateRoute path="/shops">
             <Shops></Shops>
-          </Route>
+          </PrivateRoute>
 
           <Route path="/login">
             <Login></Login>
@@ -49,6 +52,7 @@ function App() {
         </Switch>
         <Footer></Footer>
      </Router>
+     </AuthProvider>
     </div>
   );
 }
