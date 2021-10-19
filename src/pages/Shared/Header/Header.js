@@ -33,10 +33,9 @@ const Header = () => {
     </Nav>
     <Nav>
     <Navbar.Text>
-                            Signed in as: {login} <a href="#login">{}
-                            <br />
-                            {}</a>
-                        </Navbar.Text>
+        Signed in as: {login} <a href="#login">{}
+        <br />{}</a>  
+    </Navbar.Text>
     </Nav>
   </Navbar.Collapse>
   </Container>
