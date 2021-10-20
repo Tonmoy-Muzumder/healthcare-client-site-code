@@ -7,8 +7,8 @@ const NotFound = () => {
         
         <div style={{textAlign: 'center', color: 'gray'}}>
             <img src={SadEmoji} alt="" />
-            <h1 style={{fontSize: 200, }}>404</h1>
-            <h3 style={{ color:'black'}}>Oops! Nothing Was Found</h3>
+            <h1 style={{fontSize: 200,color:'black' }}>404</h1>
+            <h3 style={{ color:'black', color: 'red'}}>Oops! Nothing Was Found</h3>
             <p>The link you followed probably broken, or the page has been removed.
 
 </p>

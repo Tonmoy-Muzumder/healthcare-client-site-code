@@ -28,8 +28,8 @@ const Header = () => {
       <Nav className="me-auto">
       <Nav.Link as={HashLink} to="/home#home">HOME</Nav.Link>
       <Nav.Link as={HashLink} to="/home#services">SERVICES</Nav.Link>
-      <Nav.Link as={HashLink} to="/doctors">DOCTORS</Nav.Link>
-      <Nav.Link as={HashLink} to="/shops">SHOP</Nav.Link>       
+      <Nav.Link as={HashLink} to="/home#doctors">DOCTORS</Nav.Link>
+      <Nav.Link as={HashLink} to="/home#shops">SHOP</Nav.Link>       
     </Nav>
     <Nav>
     <Navbar.Text>

@@ -16,7 +16,7 @@ const Shops = () => {
     }, []);
 
     return (
-        <div>
+        <div id="shops">
            <div className="my-3 text-start container"><h1>Medicine</h1>
             <p>You can Buy Medicine in our Shop</p>
             </div>

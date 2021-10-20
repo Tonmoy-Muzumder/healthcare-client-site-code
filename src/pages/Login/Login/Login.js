@@ -1,99 +1,21 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useState } from 'react';
-
+// import { createUserWithEmailAndPassword, getAuth, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+// import { useState } from 'react';
 
 
 
 const Login = () => {
     const { signInUsingGoogle } = useAuth();
-
-    const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [isLogin, setIsLogin] = useState(false);
-
-  const auth = getAuth();
-
-
-  const toggleLogin = e => {
-    setIsLogin(e.target.checked)
-  }
-
-  const handleNameChange = e => {
-    setName(e.target.value);
-  }
-  const handleEmailChange = e => {
-    setEmail(e.target.value);
-  }
-
-  const handlePasswordChange = e => {
-    setPassword(e.target.value)
-  }
-
-  const handleRegistration = e => {
-    e.preventDefault();
-    console.log(email, password);
-    if (password.length < 6) {
-      setError('Password Must be at least 6 characters long.')
-      return;
-    }
-    if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-      setError('Password Must contain 2 upper case');
-      return;
-    }
-
-    if (isLogin) {
-      processLogin(email, password);
-    }
-    else {
-      registerNewUser(email, password);
-    }
-
-  }
-
-  const processLogin = (email, password) => {
-    signInWithEmailAndPassword(auth, email, password)
-      .then(result => {
-        const user = result.user;
-        console.log(user);
-        setError('');
-      })
-      .catch(error => {
-        setError(error.message);
-      })
-  }
-
-  const registerNewUser = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(result => {
-        const user = result.user;
-        console.log(user);
-        setError('');
-        verifyEmail();
-        setUserName();
-      })
-      .catch(error => {
-        setError(error.message);
-      })
-  }
-
-  const setUserName = () => {
-    updateProfile(auth.currentUser, { displayName: name })
-      .then(result => { })
-  }
-
-  const verifyEmail = () => {
-    sendEmailVerification(auth.currentUser)
-      .then(result => {
-        console.log(result);
-      })
-  }
-   
+    const { toggleLogin } = useAuth();
+    const { handleNameChange } = useAuth();
+    const { handleEmailChange } = useAuth();
+    const { handlePasswordChange } = useAuth();
+    const { handleRegistration } = useAuth();
+    const { isLogin, error } = useAuth();
+    
+    
     return (
         <div  className="w-50 mx-5 my-5 container">
 

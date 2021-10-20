@@ -16,7 +16,7 @@ const Doctors = () => {
    }, []);
    
     return (
-        <div>
+        <div id="doctors">
             <div className="my-3 text-start container"><h1>Head of Departments</h1>
             <p>The Best Doctor in our Hospital</p>
             </div>
