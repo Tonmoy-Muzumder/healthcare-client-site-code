@@ -8,7 +8,6 @@ import Doctors from './pages/Doctors/Doctors/Doctors';
 import Shops from './pages/Shop/Shops/Shops'
 import Details from './pages/Details/Details/Details';
 import Login from './pages/Login/Login/Login'
-import Register from './pages/Login/Register/Register';
 import PrivateRoute from './pages/Login/Login/PrivateRoute/PrivateRoute'
 import AuthProvider from './contexts/AuthProvider';
 import NotFound from './pages/NotFound/NotFound';
@@ -47,10 +46,6 @@ function App() {
 
           <Route path="/login">
             <Login></Login>
-          </Route>
-
-          <Route path="/register">
-            <Register></Register>
           </Route>
 
           <Route path="*">
