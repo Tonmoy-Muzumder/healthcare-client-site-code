@@ -2,10 +2,9 @@
 
 ••• The name of my website is Linings Healthcare. 
     It's a hospital related website. 
-    Here you can Book appointment for best Doctor
+  
+••• Here you can Book appointment for best Doctor
     & you can buy medicine.
-
-
 
 ••• This website have four nav on the header.
     Have some services in Home section, if you 
@@ -13,11 +12,10 @@
     view details button. After clicking button
     you have to login!
 
-
-
-
 •••If you want to appoint to a doctor.go to the Doctor
    menu in the header. if you are not register or login 
    yet. you have to do this.
-   And the shop menu for buying Medicine. It's also a
+   
+   
+••• the shop menu for buying Medicine. It's also a
    private router.
